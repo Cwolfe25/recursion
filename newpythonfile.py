@@ -28,7 +28,7 @@ def main():
         rate = input("what is the rate")
         time = input("what is the amount of time")
         principal = int(principal)
-        rate = int(rate)
+        rate = float(rate)
         time = int(time)
         get_compound_interest_balance(principal,rate,time)
         
