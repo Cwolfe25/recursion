@@ -1,15 +1,39 @@
+from generic_recursion import Get_Product_of_2_Whole_Numbers
+
 def get_powers(number,additional):
-    while additional >= 0:
-        if additional == 0:
+    '''
+    takes additional and number
+    returns number to the power of additional
+    variables:
+        additional = int
+        number = int
+    number is the number thats being exponeted 
+    additional is the exponet 
+    number to the additional power
+    '''
+    while additional >= 0:                                                                  #allows for the function to repeat
+        if additional == 0:                                                                 #if the power is 0 it equals 1
             return 1
-        elif additional >0:
-            return number*get_powers(number,additional-1) 
+        elif additional >0:                                                                 #if the number is greater than zero then it runs the function again and subtracts additional until it gets to zero
+            return number*get_powers(number,additional-1)                                   #basically this is saying that 2 to the fourth is equal to 2 time 2 to the third
 def get_compound_interest_balance(principal,rate,time):
-    while time >= 0:
-        if time == 0:
+    '''
+    takes prinicipal rate and time 
+    returns compund intrest formula of the starting value times 1 + the rate to the power of time = the money made
+    variables:
+        principal = int
+        rate = int
+        time = int
+    principal is the amount of money put into the intrest
+    rate is the rate of the growth / decay in percentages 
+    time is the amount of time the stock is growing
+    '''
+    
+    while time >= 0:                                                                        #allows the function to repeat
+        if time == 0:                                                                       #saying if it has been 0 amount of time then your money is what you put in 
             return principal
-        elif time > 0: 
-            return (1 + rate) *  get_compound_interest_balance(principal,rate,time-1)
+        elif time > 0:                                                                      #if its greater than zero it it subracts one time until it reaches zero
+            return (1 + rate) *  get_compound_interest_balance(principal,rate,time-1)       #This uses the compund intrest formula of the starting value times 1 + the rate to the power of time = the money made
 def get_square_root():
     print("ok")
     
@@ -35,6 +59,13 @@ def main():
         time = int(time)
         get_compound_interest_balance(principal,rate,time)
         print((1 + rate) *  get_compound_interest_balance(principal,rate,time-1))
+    elif menu == "8":
+        a = input("what is the first number you want to multiply")
+        b = input("what is the second number you want to multipy")
+        a = int(a)
+        b = int(b)
+        Get_Product_of_2_Whole_Numbers(a,b)
+        print(a + Get_Product_of_2_Whole_Numbers(a,b-1))
     elif menu == "9":
         number = input("what do you want the number to be")
 
