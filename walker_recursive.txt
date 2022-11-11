@@ -53,7 +53,9 @@ def get_GCD(constant1,first,second):
     description:
         finds the greatest common divisor of two numbers determined by the user. Tests every number between number #1 and zero, and sees if they are divisors of both input numbers. Test starting at number #1 and goes down, so the first hit will be the GCD
     Arguments:
-        _________________
+        constant1: the first number they inputted
+        first: The everchanging variable that is every number between constant1 and 0
+        second: The second number they inputted
     Takes:
         two positive integers from the user
     Returns:
