@@ -10,10 +10,13 @@ def get_compound_interest_balance(principal,rate,time):
             return principal
         elif time > 0: 
             return (1 + rate) *  get_compound_interest_balance(principal,rate,time-1)
+def get_square_root():
+    print("ok")
+    
     
     
 def main():
-    print("1 = factorial 2 = summation 3 = powers 4 = sum of digits 5 = fibonacci 6 = GCD 7 = Euclids 8 = compound intrest 9 = product of 2 numbers 10 = square root")
+    print("1 = factorial 2 = summation 3 = powers 4 = sum of digits 5 = fibonacci 6 = Euclids 7 = compound intrest 8 = product of 2 numbers 9 = square root")
     menu = input("what do you want to do?")
     
     if menu == "3":
@@ -23,7 +26,7 @@ def main():
         additional = int(additional)
         get_powers(number,additional)
         print(number*get_powers(number,additional-1))
-    elif menu == "8":
+    elif menu == "7":
         principal = input("what is the innitial amount")
         rate = input("what is the rate")
         time = input("what is the amount of time")
@@ -31,6 +34,10 @@ def main():
         rate = float(rate)
         time = int(time)
         get_compound_interest_balance(principal,rate,time)
+        print((1 + rate) *  get_compound_interest_balance(principal,rate,time-1))
+    elif menu == "9":
+        number = input("what do you want the number to be")
+
         
 if __name__ == '__main__':
     main()
