@@ -2,6 +2,8 @@ from generic_recursion import Get_Product_of_2_Whole_Numbers
 from walker_recursive import get_factorial
 from walker_recursive import get_fibonacci
 from walker_recursive import get_GCD
+from Generic_Recursion_dylan import get_summation
+from Generic_Recursion_dylan import get_sum_of_numbers_digits
 def get_powers(number,additional):
     '''
     takes additional and number
@@ -49,6 +51,11 @@ def main():
         number = int(number)
         get_factorial(number)
         print(number * get_factorial(number - 1))
+    elif menu == "2":
+        n = input("what number do you want")
+        n = int(n)
+        get_summation(n)
+        print(n + get_summation(n-1))
     elif menu == "3":
         number = input("what is the number that is manipulated")
         additional = input("what is the amount of times you want this to repeat")
@@ -56,6 +63,11 @@ def main():
         additional = int(additional)
         get_powers(number,additional)
         print(number*get_powers(number,additional-1))
+    elif menu == "4":
+        n = input("what number do you want")
+        n = int(n)
+        get_sum_of_numbers_digits(n)
+        print(get_sum_of_numbers_digits(n+10) + n % 10)
     elif menu == "5":
         number = input("what number do you want to get fibonacci")
         number = int(number)
