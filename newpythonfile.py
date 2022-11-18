@@ -1,5 +1,7 @@
 from generic_recursion import Get_Product_of_2_Whole_Numbers
-
+from walker_recursive import get_factorial
+from walker_recursive import get_fibonacci
+from walker_recursive import get_GCD
 def get_powers(number,additional):
     '''
     takes additional and number
@@ -34,22 +36,32 @@ def get_compound_interest_balance(principal,rate,time):
             return principal
         elif time > 0:                                                                      #if its greater than zero it it subracts one time until it reaches zero
             return (1 + rate) *  get_compound_interest_balance(principal,rate,time-1)       #This uses the compund intrest formula of the starting value times 1 + the rate to the power of time = the money made
-def get_square_root():
-    print("ok")
+
     
     
     
 def main():
-    print("1 = factorial 2 = summation 3 = powers 4 = sum of digits 5 = fibonacci 6 = Euclids 7 = compound intrest 8 = product of 2 numbers 9 = square root")
+    print("1 = factorial 2 = summation 3 = powers 4 = sum of digits 5 = fibonacci 6 = Euclids 7 = compound intrest 8 = product of 2 numbers 9 = GCD")
     menu = input("what do you want to do?")
     
-    if menu == "3":
+    if menu == "1":
+        number = input("what number do you want factorialed")
+        number = int(number)
+        get_factorial(number)
+        print(number * get_factorial(number - 1))
+    elif menu == "3":
         number = input("what is the number that is manipulated")
         additional = input("what is the amount of times you want this to repeat")
         number = int(number)
         additional = int(additional)
         get_powers(number,additional)
         print(number*get_powers(number,additional-1))
+    elif menu == "5":
+        number = input("what number do you want to get fibonacci")
+        number = int(number)
+        get_fibonacci(number)
+        print(get_fibonacci(number-1)+get_fibonacci(number-2))
+
     elif menu == "7":
         principal = input("what is the innitial amount")
         rate = input("what is the rate")
@@ -67,7 +79,12 @@ def main():
         Get_Product_of_2_Whole_Numbers(a,b)
         print(a + Get_Product_of_2_Whole_Numbers(a,b-1))
     elif menu == "9":
-        number = input("what do you want the number to be")
+        first = input("what do you what the first number you want")
+        first = int(first)
+        constant1 = int(first)
+        second = input("what is the other number that you want")
+        get_GCD(constant1,first,second)
+        print(get_GCD(constant1,first,second))
 
         
 if __name__ == '__main__':
