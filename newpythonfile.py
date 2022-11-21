@@ -43,7 +43,7 @@ def get_compound_interest_balance(principal,rate,time):
     
     
 def main():
-    print("1 = factorial 2 = summation 3 = powers 4 = sum of digits 5 = fibonacci 6 = Euclids 7 = compound intrest 8 = product of 2 numbers 9 = GCD")
+    print("1 = factorial 2 = summation 3 = powers 4 = sum of digits 5 = fibonacci 6 = compound intrest 7 = product of 2 numbers 8 = GCD")
     menu = input("what do you want to do?")
     
     if menu == "1":
@@ -74,7 +74,7 @@ def main():
         get_fibonacci(number)
         print(get_fibonacci(number-1)+get_fibonacci(number-2))
 
-    elif menu == "7":
+    elif menu == "6":
         principal = input("what is the innitial amount")
         rate = input("what is the rate")
         time = input("what is the amount of time")
@@ -83,14 +83,14 @@ def main():
         time = int(time)
         get_compound_interest_balance(principal,rate,time)
         print((1 + rate) *  get_compound_interest_balance(principal,rate,time-1))
-    elif menu == "8":
+    elif menu == "7":
         a = input("what is the first number you want to multiply")
         b = input("what is the second number you want to multipy")
         a = int(a)
         b = int(b)
         Get_Product_of_2_Whole_Numbers(a,b)
         print(a + Get_Product_of_2_Whole_Numbers(a,b-1))
-    elif menu == "9":
+    elif menu == "8":
         first = input("what do you what the first number you want")
         first = int(first)
         constant1 = int(first)
