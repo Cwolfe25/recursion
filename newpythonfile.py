@@ -67,7 +67,7 @@ def main():
         n = input("what number do you want")
         n = int(n)
         get_sum_of_numbers_digits(n)
-        print(get_sum_of_numbers_digits(n+10) + n % 10)
+        print(get_sum_of_numbers_digits(n+10) + n / 10)
     elif menu == "5":
         number = input("what number do you want to get fibonacci")
         number = int(number)
