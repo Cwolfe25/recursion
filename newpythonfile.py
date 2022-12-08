@@ -2,6 +2,8 @@ from generic_recursion import Get_Product_of_2_Whole_Numbers
 from walker_recursive import get_factorial
 from walker_recursive import get_fibonacci
 from walker_recursive import get_GCD
+from Generic_Recursion_dylan import get_summation
+from Generic_Recursion_dylan import get_sum_of_numbers_digits
 def get_powers(number,additional):
     '''
     takes additional and number
@@ -41,7 +43,7 @@ def get_compound_interest_balance(principal,rate,time):
     
     
 def main():
-    print("1 = factorial 2 = summation 3 = powers 4 = sum of digits 5 = fibonacci 6 = Euclids 7 = compound intrest 8 = product of 2 numbers 9 = GCD")
+    print("1 = factorial 2 = summation 3 = powers 4 = sum of digits 5 = fibonacci 6 = compound intrest 7 = product of 2 numbers 8 = GCD")
     menu = input("what do you want to do?")
     
     if menu == "1":
@@ -49,6 +51,11 @@ def main():
         number = int(number)
         get_factorial(number)
         print(number * get_factorial(number - 1))
+    elif menu == "2":
+        n = input("what number do you want")
+        n = int(n)
+        get_summation(n)
+        print(n + get_summation(n-1))
     elif menu == "3":
         number = input("what is the number that is manipulated")
         additional = input("what is the amount of times you want this to repeat")
@@ -56,13 +63,18 @@ def main():
         additional = int(additional)
         get_powers(number,additional)
         print(number*get_powers(number,additional-1))
+    elif menu == "4":
+        n = input("what number do you want")
+        n = int(n)
+        get_sum_of_numbers_digits(n)
+        print(get_sum_of_numbers_digits(n+10) + n / 10)
     elif menu == "5":
         number = input("what number do you want to get fibonacci")
         number = int(number)
         get_fibonacci(number)
         print(get_fibonacci(number-1)+get_fibonacci(number-2))
 
-    elif menu == "7":
+    elif menu == "6":
         principal = input("what is the innitial amount")
         rate = input("what is the rate")
         time = input("what is the amount of time")
@@ -71,14 +83,14 @@ def main():
         time = int(time)
         get_compound_interest_balance(principal,rate,time)
         print((1 + rate) *  get_compound_interest_balance(principal,rate,time-1))
-    elif menu == "8":
+    elif menu == "7":
         a = input("what is the first number you want to multiply")
         b = input("what is the second number you want to multipy")
         a = int(a)
         b = int(b)
         Get_Product_of_2_Whole_Numbers(a,b)
         print(a + Get_Product_of_2_Whole_Numbers(a,b-1))
-    elif menu == "9":
+    elif menu == "8":
         first = input("what do you what the first number you want")
         first = int(first)
         constant1 = int(first)
